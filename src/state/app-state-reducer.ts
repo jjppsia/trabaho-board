@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid'
-
 import { Action } from '@/state/actions'
 import { DragItem } from '@/types'
 import { findItemIndexById, moveItem } from '@/utils/item-util'
@@ -31,7 +29,7 @@ export const appStateReducer = (
     }
     case 'ADD_LIST': {
       draft.lists.push({
-        id: nanoid(),
+        id: crypto.randomUUID(),
         text: action.payload,
         tasks: [],
       })
@@ -42,7 +40,7 @@ export const appStateReducer = (
       const targetListIndex = findItemIndexById(draft.lists, listId)
 
       draft.lists[targetListIndex].tasks.push({
-        id: nanoid(),
+        id: crypto.randomUUID(),
         text,
       })
       break
