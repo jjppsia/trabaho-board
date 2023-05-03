@@ -5,7 +5,7 @@ import { useDrop } from 'react-dnd'
 import AddNewItem from '@/components/add-new-item'
 import Card from '@/components/card'
 import { useDragItem } from '@/hooks/use-drag-item'
-import { addTask, moveList } from '@/state/actions'
+import { addTask, moveList, moveTask, setDraggedItem } from '@/state/actions'
 import { useAppState } from '@/state/app-state-context'
 import { ColumnContainer, ColumnTitle } from '@/styles/styled-components'
 import { isHidden } from '@/utils/is-hidden-util'
@@ -23,13 +23,21 @@ export const Column = ({ id, text, isPreview }: ColumnProps) => {
   const { drag } = useDragItem({ type: 'COLUMN', id, text })
 
   const [, drop] = useDrop({
-    accept: 'COLUMN',
+    accept: ['COLUMN', 'CARD'],
     hover: throttle(() => {
       if (!draggedItem) return
-      if (draggedItem.type !== 'COLUMN') return
-      if (draggedItem.id === id) return
 
-      dispatch(moveList(draggedItem.id, id))
+      if (draggedItem.type === 'COLUMN') {
+        if (draggedItem.id === id) return
+
+        dispatch(moveList(draggedItem.id, id))
+      } else {
+        if (draggedItem.columnId === id) return
+        if (tasks.length) return
+
+        dispatch(moveTask(draggedItem.id, null, draggedItem.columnId, id))
+        dispatch(setDraggedItem({ ...draggedItem, columnId: id }))
+      }
     }, 200),
   })
 
