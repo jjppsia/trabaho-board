@@ -1,9 +1,9 @@
-import AddNewItem from './components/add-new-item'
-import { Column } from './components/column'
-import CustomDragLayer from './components/custom-drag-layer'
-import { addList } from './state/actions'
-import { useAppState } from './state/app-state-context'
-import { AppContainer } from './styles'
+import AddNewItem from '@/components/add-new-item'
+import { Column } from '@/components/column'
+import CustomDragLayer from '@/components/custom-drag-layer'
+import { addList } from '@/state/actions'
+import { useAppState } from '@/state/app-state-context'
+import { AppContainer } from '@/styles/styled-components'
 
 function App() {
   const { lists, dispatch } = useAppState()

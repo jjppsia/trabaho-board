@@ -1,4 +1,4 @@
-import { DragItem } from '../types'
+import { DragItem } from '@/types'
 
 export type Action =
   | { type: 'ADD_LIST'; payload: string }

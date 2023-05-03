@@ -1,8 +1,14 @@
 import { Dispatch, createContext, useContext } from 'react'
 import { useImmerReducer } from 'use-immer'
-import { DragItem } from '../types'
-import { Action } from './actions'
-import { AppState, List, Task, appStateReducer } from './app-state-reducer'
+
+import { DragItem } from '@/types'
+import { Action } from '@/state/actions'
+import {
+  AppState,
+  List,
+  Task,
+  appStateReducer,
+} from '@/state/app-state-reducer'
 
 const appData: AppState = {
   lists: [

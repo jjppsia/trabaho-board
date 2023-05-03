@@ -1,4 +1,4 @@
-import { DragItem } from '../types'
+import { DragItem } from '@/types'
 
 export const isHidden = (
   itemType: string,

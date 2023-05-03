@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid'
-import { DragItem } from '../types'
-import { findItemIndexById, moveItem } from '../utils/item-util'
-import { Action } from './actions'
+
+import { Action } from '@/state/actions'
+import { DragItem } from '@/types'
+import { findItemIndexById, moveItem } from '@/utils/item-util'
 
 export type Task = {
   id: string

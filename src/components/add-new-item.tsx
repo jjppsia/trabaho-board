@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { AddItemButton } from '../styles'
-import NewItemForm from './new-item-form'
+
+import NewItemForm from '@/components/new-item-form'
+import { AddItemButton } from '@/styles/styled-components'
 
 type AddNewItemProps = {
   onAdd: (text: string) => void

@@ -1,13 +1,14 @@
 import throttle from 'lodash.throttle'
 import { useRef } from 'react'
 import { useDrop } from 'react-dnd'
-import { useItemDrag } from '../hooks/use-item-drag'
-import { addTask, moveList } from '../state/actions'
-import { useAppState } from '../state/app-state-context'
-import { ColumnContainer, ColumnTitle } from '../styles'
-import { isHidden } from '../utils/is-hidden-util'
-import AddNewItem from './add-new-item'
-import Card from './card'
+
+import AddNewItem from '@/components/add-new-item'
+import Card from '@/components/card'
+import { useItemDrag } from '@/hooks/use-item-drag'
+import { addTask, moveList } from '@/state/actions'
+import { useAppState } from '@/state/app-state-context'
+import { ColumnContainer, ColumnTitle } from '@/styles/styled-components'
+import { isHidden } from '@/utils/is-hidden-util'
 
 type ColumnProps = {
   id: string

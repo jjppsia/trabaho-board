@@ -1,11 +1,12 @@
 import throttle from 'lodash.throttle'
 import { useRef } from 'react'
 import { useDrop } from 'react-dnd'
-import { useItemDrag } from '../hooks/use-item-drag'
-import { moveTask, setDraggedItem } from '../state/actions'
-import { useAppState } from '../state/app-state-context'
-import { CardContainer } from '../styles'
-import { isHidden } from '../utils/is-hidden-util'
+
+import { useItemDrag } from '@/hooks/use-item-drag'
+import { moveTask, setDraggedItem } from '@/state/actions'
+import { useAppState } from '@/state/app-state-context'
+import { CardContainer } from '@/styles/styled-components'
+import { isHidden } from '@/utils/is-hidden-util'
 
 type CardProps = {
   id: string
