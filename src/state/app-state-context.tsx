@@ -15,17 +15,17 @@ const appData: AppState = {
     {
       id: '1',
       text: 'To Do',
-      tasks: [{ id: 'c0', text: 'Generate app scaffold' }],
+      tasks: [{ id: 'c0', text: 'Implement oauth authentication' }],
     },
     {
       id: '2',
       text: 'In Progress',
-      tasks: [{ id: 'c1', text: 'Learn Typescript' }],
+      tasks: [{ id: 'c1', text: 'Move columns and rows back and forth' }],
     },
     {
       id: '3',
       text: 'Done',
-      tasks: [{ id: 'c2', text: 'Begin to use static typing' }],
+      tasks: [{ id: 'c2', text: 'Refactor imports. It must use aliases' }],
     },
   ],
   draggedItem: null,
