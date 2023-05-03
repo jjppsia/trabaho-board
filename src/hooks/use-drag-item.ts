@@ -6,7 +6,7 @@ import { setDraggedItem } from '@/state/actions'
 import { useAppState } from '@/state/app-state-context'
 import { DragItem } from '@/types'
 
-export const useItemDrag = (item: DragItem) => {
+export const useDragItem = (item: DragItem) => {
   const { dispatch } = useAppState()
   const [, drag, preview] = useDrag({
     type: item.type,

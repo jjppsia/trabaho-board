@@ -4,7 +4,7 @@ import { useDrop } from 'react-dnd'
 
 import AddNewItem from '@/components/add-new-item'
 import Card from '@/components/card'
-import { useItemDrag } from '@/hooks/use-item-drag'
+import { useDragItem } from '@/hooks/use-drag-item'
 import { addTask, moveList } from '@/state/actions'
 import { useAppState } from '@/state/app-state-context'
 import { ColumnContainer, ColumnTitle } from '@/styles/styled-components'
@@ -20,7 +20,7 @@ export const Column = ({ id, text, isPreview }: ColumnProps) => {
   const ref = useRef<HTMLInputElement>(null)
 
   const { draggedItem, getTasksByListId, dispatch } = useAppState()
-  const { drag } = useItemDrag({ type: 'COLUMN', id, text })
+  const { drag } = useDragItem({ type: 'COLUMN', id, text })
 
   const [, drop] = useDrop({
     accept: 'COLUMN',

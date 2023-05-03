@@ -2,7 +2,7 @@ import throttle from 'lodash.throttle'
 import { useRef } from 'react'
 import { useDrop } from 'react-dnd'
 
-import { useItemDrag } from '@/hooks/use-item-drag'
+import { useDragItem } from '@/hooks/use-drag-item'
 import { moveTask, setDraggedItem } from '@/state/actions'
 import { useAppState } from '@/state/app-state-context'
 import { CardContainer } from '@/styles/styled-components'
@@ -18,7 +18,7 @@ type CardProps = {
 function Card({ id, text, columnId, isPreview }: CardProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { draggedItem, dispatch } = useAppState()
-  const { drag } = useItemDrag({ type: 'CARD', id, text, columnId })
+  const { drag } = useDragItem({ type: 'CARD', id, text, columnId })
 
   const [, drop] = useDrop({
     accept: 'CARD',
